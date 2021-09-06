@@ -1,0 +1,14 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap");
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Roboto Mono", monospace;
+  background-color: #e9e8e9;
+  height: 150em;
+}
+
+/*verde color: #04fb84; */
+/* verde inchis: color: #0CC877 */

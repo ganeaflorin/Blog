@@ -1,0 +1,102 @@
+.navbar {
+  background-color: #34043c;
+}
+.navbar__container {
+  height: 12vh;
+  margin: 0 6em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar__img {
+  height: 4em;
+  width: 4em;
+}
+
+.navbar__links {
+  display: flex;
+  justify-content: space-between;
+  width: 20em;
+}
+
+.navbar__refs {
+  color: #e9e8e9;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-decoration: none;
+  position: relative;
+  transition: color 1s linear;
+}
+
+/* <border expansion animation> */
+
+.navbar__refs::before,
+.navbar__refs::after {
+  position: absolute;
+  content: "";
+  border: 2px solid transparent;
+  background: transparent;
+  --linkHoverColor: #04fb84;
+}
+.navbar__refs::before {
+  top: calc(-20% - 2px);
+  left: calc(-10% - 2px);
+}
+.navbar__refs::after {
+  bottom: calc(-20% - 2px);
+  right: calc(-10% - 2px);
+}
+
+.navbar__refs:hover::before {
+  animation: border-expansion-before 2.5s linear forwards;
+  animation-delay: 0.3s;
+}
+.navbar__refs:hover::after {
+  animation: border-expansion-after 2.5s linear forwards;
+  animation-delay: 0.3s;
+}
+.navbar__refs:hover {
+  color: #04fb84;
+}
+
+@keyframes border-expansion-before {
+  0% {
+    width: 0;
+    height: 0;
+    border-top: 2px solid var(--linkHoverColor);
+  }
+  25% {
+    width: 120%;
+    border-top: 2px solid var(--linkHoverColor);
+    border-left: 2px solid var(--linkHoverColor);
+  }
+  50%,
+  100% {
+    width: 120%;
+    height: 140%;
+    border-top: 2px solid var(--linkHoverColor);
+    border-left: 2px solid var(--linkHoverColor);
+  }
+}
+
+@keyframes border-expansion-after {
+  0% {
+    width: 0;
+    height: 0;
+    border-bottom: 2px solid var(--linkHoverColor);
+  }
+  25% {
+    width: 120%;
+    border-bottom: 2px solid var(--linkHoverColor);
+    border-right: 2px solid var(--linkHoverColor);
+  }
+  50%,
+  100% {
+    width: 120%;
+    height: 140%;
+    border-bottom: 2px solid var(--linkHoverColor);
+    border-right: 2px solid var(--linkHoverColor);
+  }
+}
+/* </border expansion animation> */
