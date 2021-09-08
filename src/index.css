@@ -1,5 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap");
-
+:root {
+  --postsContainerHeight: 0;
+  --violetColor: #34043c;
+  --greencolor: #04fb84;
+  --darkGreenColor: #0cc877;
+}
 * {
   margin: 0;
   box-sizing: border-box;
@@ -7,7 +12,6 @@
 body {
   font-family: "Roboto Mono", monospace;
   background-color: #e9e8e9;
-  height: 150em;
 }
 
 /*verde color: #04fb84; */

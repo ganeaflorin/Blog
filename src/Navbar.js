@@ -10,14 +10,12 @@ function Navbar() {
         ></img>
         <div className="navbar__links">
           <a className="navbar__refs" href="/">
-            HOME
+          ACASĂ 
           </a>
           <a className="navbar__refs" href="/create">
-            NEW BLOG
+          GESTIONEAZĂ POSTĂRILE
           </a>
-          <a className="navbar__refs" href="/delete">
-            DELETE BLOG
-          </a>
+
         </div>
       </div>
     </nav>

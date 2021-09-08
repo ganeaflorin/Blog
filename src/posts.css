@@ -1,0 +1,72 @@
+.posts-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-content: space-evenly;
+  justify-items: center;
+  height: var(--postsContainerHeight);
+  /* justify-content: space-evenly; */
+}
+.post {
+  width: 30em;
+  height: 50em;
+  max-height: 40em;
+  background-color: var(--violetColor);
+  /* border: 2px solid var(--violetColor); */
+  border-radius: 5%;
+  color: white;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+.book__infos {
+  display: grid;
+  grid-template-rows: 1fr 3fr;
+  grid-template-areas:
+    "book-title image"
+    "book-author image";
+  width: 100%;
+  height: 30%;
+  justify-items: center;
+}
+.post__title {
+  grid-area: book-title;
+}
+.post__image {
+  grid-area: image;
+}
+.post__author {
+  grid-area: book-author;
+}
+.post__image {
+  max-width: 70%;
+  max-height: 100%;
+}
+
+.post__button {
+  text-transform: uppercase;
+  width: 30%;
+  align-self: center;
+  background-color: transparent;
+  color: var(--greencolor);
+  font-family: "Roboto Mono", monospace;
+  border: 2px solid var(--greencolor);
+  padding: 14px;
+  cursor: pointer;
+  position: relative;
+}
+
+.post__article {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 9; /* number of lines to show */
+  -webkit-box-orient: vertical;
+  line-height: 30px;
+  text-indent: 8%;
+  margin: 0 5%;
+}
+
+.post__date {
+  align-self: center;
+}
