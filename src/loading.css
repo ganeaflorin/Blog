@@ -1,0 +1,27 @@
+.loading {
+  margin-top: 5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.loading__message {
+  font-size: 32px;
+}
+
+.loading__spinner {
+  width: 2em;
+  height: 2em;
+  border-radius: 100%;
+  border: 5px solid transparent;
+  border-bottom-color: var(--violetColor);
+  border-top-color: var(--violetColor);
+  animation: spinner 1.25s infinite ease;
+}
+@keyframes spinner {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
