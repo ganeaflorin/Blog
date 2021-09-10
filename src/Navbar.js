@@ -1,4 +1,5 @@
 import "./navbar.css";
+import { Link } from "react-router-dom";
 function Navbar() {
   return (
     <nav className="navbar">
@@ -9,13 +10,12 @@ function Navbar() {
           alt="fnatic-logo"
         ></img>
         <div className="navbar__links">
-          <a className="navbar__refs" href="/">
-          ACASĂ 
-          </a>
-          <a className="navbar__refs" href="/create">
-          GESTIONEAZĂ POSTĂRILE
-          </a>
-
+          <Link className="navbar__refs" to="/">
+            ACASĂ
+          </Link>
+          <Link className="navbar__refs" to="/manager">
+            GESTIONEAZĂ POSTĂRILE
+          </Link>
         </div>
       </div>
     </nav>
