@@ -8,7 +8,6 @@ function Home() {
   function updatePostContainerHeight() {
     let noPosts = posts.length;
     let postHeight = 30;
-    // let postHeight = document.getElementsByClassName("post")[0].getBoundingClientRect().height;
     let height = 20 + (noPosts / 3) * (postHeight + 20);
     document.documentElement.style.setProperty(
       "--postsContainerHeight",
@@ -17,9 +16,11 @@ function Home() {
     return true;
   }
 
-  const { data: posts, isLoading, error } = useFetch(
-    "http://localhost:8359/posts"
-  );
+  const {
+    data: posts,
+    isLoading,
+    error,
+  } = useFetch("http://localhost:8359/posts");
 
   return (
     <div className="home">
