@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import "./posts.css";
+import "./styles/posts.css";
 function PostList(props) {
   const posts = props.posts;
   return (

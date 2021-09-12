@@ -4,13 +4,11 @@
   align-content: space-evenly;
   justify-items: center;
   height: var(--postsContainerHeight);
-  /* justify-content: space-evenly; */
+  max-width: 100%;
 }
 .post {
-  width: 30em;
-  height: 50em;
-  max-height: 40em;
-  /* background-color: var(--violetColor); */
+  max-width: 80%;
+  height: 40em;
   border: 2px solid var(--violetColor);
   color: var(--violetColor);
   position: relative;
