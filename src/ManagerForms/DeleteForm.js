@@ -1,18 +1,26 @@
-import useFetch from "../useFetch";
-
-function DeleteForm() {
-  const URL = "http://localhost:8359/posts";
-  const { data: posts, isLoading, error } = useFetch(URL);
+import Loading from "../Loading";
+function DeleteForm(props) {
+  const { data: posts, isLoading, error } = props.fetchData;
   return (
     <div>
+      {error && <div> {error} </div>}
+      {isLoading && <Loading />}
       {posts && (
         <label>
           Alege un blog:
-          <select name="choose blog">
+          <select id="delete-blog" name="delete-blog">
+            <option value={""} key={-1}>
+              Alege...
+            </option>
             {posts.map((blog) => {
-              return <option value={blog.title}> {blog.title}</option>;
+              return (
+                <option value={blog.id} key={blog.id}>
+                  {" "}
+                  {blog.title}
+                </option>
+              );
             })}
-          </select>{" "}
+          </select>
         </label>
       )}
     </div>

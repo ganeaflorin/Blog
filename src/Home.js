@@ -1,8 +1,8 @@
 import PostList from "./PostList";
 import Loading from "./Loading";
-import useFetch from "./useFetch";
-// import { useEffect, useState } from "react";
-function Home() {
+function Home(props) {
+  const { data: posts, isLoading, error } = props.fetchData;
+  console.log(posts);
   //function to update the height based on the number of posts
   function updatePostContainerHeight() {
     const noPosts = posts.length;
@@ -12,11 +12,9 @@ function Home() {
       "--postsContainerHeight",
       `${height}em`
     );
+    console.log(posts);
     return true;
   }
-  const URL = "http://localhost:8359/posts";
-  const { data: posts, isLoading, error } = useFetch(URL);
-
   return (
     <div className="home">
       {error && <div> {error} </div>}
