@@ -4,24 +4,16 @@ import Loading from "../Loading";
 function UpdateForm(props) {
   const { data: posts, isLoading, error } = props.fetchData;
   const [blogToUpdate, setBlogToUpdate] = useState(null);
-  const [title, setTitle] = useState("");
-  const [image, setImage] = useState("");
-  const [author, setAuthor] = useState("");
-  const [article, setArticle] = useState("");
+  // const [title, setTitle] = useState("");
+  // const [image, setImage] = useState("");
+  // const [author, setAuthor] = useState("");
+  // const [article, setArticle] = useState("");
   const handleUpdate = () => {
     const blogId = document.getElementById("update-blog").value;
     posts.forEach((blog) => {
       if (blog.id === Number(blogId)) setBlogToUpdate(blog);
     });
   };
-  useEffect(() => {
-    if (blogToUpdate) {
-      setTitle(blogToUpdate.title);
-      setAuthor(blogToUpdate.author);
-      setImage(blogToUpdate.author);
-      setArticle(blogToUpdate.article);
-    }
-  }, [blogToUpdate]);
   return (
     <div>
       {error && <div> {error} </div>}
@@ -57,11 +49,11 @@ function UpdateForm(props) {
               type="text"
               required
               name="update-title"
-              value={title}
+              defaultValue={blogToUpdate.title}
               onChange={(e) => {
-                setTitle(e.target.value);
-                // blogToUpdate.title = e.target.value;
-                // setBlogToUpdate(blogToUpdate);
+                // setTitle(e.target.value);
+                blogToUpdate.title = e.target.value;
+                setBlogToUpdate(blogToUpdate);
               }}
             ></input>
           </label>
@@ -71,11 +63,10 @@ function UpdateForm(props) {
               type="text"
               required
               name="update-image"
-              value={image}
+              defaultValue={blogToUpdate.image}
               onChange={(e) => {
-                setImage(e.target.value);
-                // blogToUpdate.image = e.target.value;
-                // setBlogToUpdate(blogToUpdate);
+                blogToUpdate.image = e.target.value;
+                setBlogToUpdate(blogToUpdate);
               }}
             ></input>
           </label>
@@ -85,11 +76,10 @@ function UpdateForm(props) {
               type="text"
               required
               name="update-author"
-              value={author}
+              defaultValue={blogToUpdate.author}
               onChange={(e) => {
-                setAuthor(e.target.value);
-                // blogToUpdate.author = e.target.value;
-                // setBlogToUpdate(blogToUpdate);
+                blogToUpdate.author = e.target.value;
+                setBlogToUpdate(blogToUpdate);
               }}
             ></input>
           </label>
@@ -99,11 +89,10 @@ function UpdateForm(props) {
               type="textarea"
               required
               name="update-article"
-              value={article}
+              defaultValue={blogToUpdate.article}
               onChange={(e) => {
-                setArticle(e.target.value);
-                // blogToUpdate.article = e.target.value;
-                // setBlogToUpdate(blogToUpdate);
+                blogToUpdate.article = e.target.value;
+                setBlogToUpdate(blogToUpdate);
               }}
             ></input>
           </label>

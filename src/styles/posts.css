@@ -32,12 +32,12 @@
   grid-area: book-title;
 }
 .post__image {
-  grid-area: image;
 }
 .post__author {
   grid-area: book-author;
 }
 .post__image {
+  grid-area: image;
   max-width: 70%;
   max-height: 100%;
   border: 1px solid black;

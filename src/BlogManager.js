@@ -21,6 +21,7 @@ function BlogManager(props) {
       handleUpdate(e);
     }
     history.push("/");
+    window.location.reload();
   };
   const HandleCreate = (e) => {
     const blog = {
@@ -44,12 +45,11 @@ function BlogManager(props) {
     const blogId = document.getElementById("update-blog").value;
     const blog = {
       title: e.target["update-title"].value,
-      image: e.target["update-image"].value,
-      date: getTodaysDateRomanian(),
-      author: e.target["update-author"].value,
-      article: e.target["update-article"].value,
+      // image: e.target["update-image"].value,
+      // date: getTodaysDateRomanian(),
+      // author: e.target["update-author"].value,
+      // article: e.target["update-article"].value,
     };
-    console.log(URL);
     fetch(URL + blogId, {
       method: "PATCH",
       headers: { "Content-Type": "application/json" },
