@@ -8,12 +8,24 @@ function UpdateForm(props) {
   // const [image, setImage] = useState("");
   // const [author, setAuthor] = useState("");
   // const [article, setArticle] = useState("");
-  const handleUpdate = () => {
+  const handleUpdate = (e) => {
     const blogId = document.getElementById("update-blog").value;
     posts.forEach((blog) => {
       if (blog.id === Number(blogId)) setBlogToUpdate(blog);
     });
+    // const updateForm = document.getElementById("update-form");
+    // console.log(updateForm);
   };
+  useEffect(() => {
+    setBlogToUpdate(blogToUpdate);
+    const updateForm = document.getElementById("update-form");
+    if (updateForm) {
+      updateForm.childNodes.forEach((label) => {
+        const inputFieldName = label.childNodes[1].name.split("-")[1];
+        label.childNodes[1].value = blogToUpdate[inputFieldName];
+      });
+    }
+  }, [blogToUpdate]);
   return (
     <div>
       {error && <div> {error} </div>}
@@ -49,7 +61,7 @@ function UpdateForm(props) {
               type="text"
               required
               name="update-title"
-              defaultValue={blogToUpdate.title}
+              // defaultValue={blogToUpdate.title}
               onChange={(e) => {
                 // setTitle(e.target.value);
                 blogToUpdate.title = e.target.value;
@@ -63,7 +75,7 @@ function UpdateForm(props) {
               type="text"
               required
               name="update-image"
-              defaultValue={blogToUpdate.image}
+              // defaultValue={blogToUpdate.image}
               onChange={(e) => {
                 blogToUpdate.image = e.target.value;
                 setBlogToUpdate(blogToUpdate);
@@ -76,7 +88,7 @@ function UpdateForm(props) {
               type="text"
               required
               name="update-author"
-              defaultValue={blogToUpdate.author}
+              // defaultValue={blogToUpdate.author}
               onChange={(e) => {
                 blogToUpdate.author = e.target.value;
                 setBlogToUpdate(blogToUpdate);
@@ -89,7 +101,7 @@ function UpdateForm(props) {
               type="textarea"
               required
               name="update-article"
-              defaultValue={blogToUpdate.article}
+              // defaultValue={blogToUpdate.article}
               onChange={(e) => {
                 blogToUpdate.article = e.target.value;
                 setBlogToUpdate(blogToUpdate);

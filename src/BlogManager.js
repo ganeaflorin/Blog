@@ -45,10 +45,10 @@ function BlogManager(props) {
     const blogId = document.getElementById("update-blog").value;
     const blog = {
       title: e.target["update-title"].value,
-      // image: e.target["update-image"].value,
-      // date: getTodaysDateRomanian(),
-      // author: e.target["update-author"].value,
-      // article: e.target["update-article"].value,
+      image: e.target["update-image"].value,
+      date: getTodaysDateRomanian(),
+      author: e.target["update-author"].value,
+      article: e.target["update-article"].value,
     };
     fetch(URL + blogId, {
       method: "PATCH",
