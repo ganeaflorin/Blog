@@ -2,15 +2,15 @@ import Loading from "../Loading";
 function DeleteForm(props) {
   const { data: posts, isLoading, error } = props.fetchData;
   return (
-    <div>
+    <div className="manager__delete">
       {error && <div> {error} </div>}
       {isLoading && <Loading />}
       {posts && (
         <label>
-          Alege un blog:
+          Alege un blog
           <select id="delete-blog" name="delete-blog">
             <option value={""} key={-1}>
-              Alege...
+              -
             </option>
             {posts.map((blog) => {
               return (

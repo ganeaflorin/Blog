@@ -4,6 +4,7 @@ import UpdateForm from "./ManagerForms/UpdateForm";
 import DeleteForm from "./ManagerForms/DeleteForm";
 import getTodaysDateRomanian from "./getTodaysDateRomanian";
 import { useHistory } from "react-router-dom";
+import "./styles/manager.css";
 function BlogManager(props) {
   const URL = props.URL;
   // const { data: posts, isLoading, error } = props.fetchData;
@@ -57,9 +58,9 @@ function BlogManager(props) {
     });
   };
   return (
-    <div className="manager-container">
-      <form className="form" onSubmit={handleSubmit}>
-        <label>
+    <div className="manager">
+      <form className="manager__form" onSubmit={handleSubmit}>
+        <label className="manager__action-chooser">
           Alege o actiune
           <select
             id="manager-action"
@@ -79,7 +80,9 @@ function BlogManager(props) {
         {managerAction === "delete" && (
           <DeleteForm fetchData={props.fetchData} />
         )}
-        <button type="submit">TRIMITE</button>
+        <button type="submit" className="post__button">
+          TRIMITE
+        </button>
       </form>
     </div>
   );

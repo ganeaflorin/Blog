@@ -27,12 +27,12 @@ function UpdateForm(props) {
     }
   }, [blogToUpdate]);
   return (
-    <div>
+    <div className="manager__update-container">
       {error && <div> {error} </div>}
       {isLoading && <Loading />}
       {posts && (
         <label>
-          Alege un blog:
+          Alege un blog
           <select
             id="update-blog"
             name="update-blog"
@@ -41,7 +41,7 @@ function UpdateForm(props) {
             }}
           >
             <option value={""} key={-1}>
-              Alege...
+              -
             </option>
             {posts.map((blog) => {
               return (
@@ -54,7 +54,7 @@ function UpdateForm(props) {
         </label>
       )}
       {blogToUpdate && (
-        <div id="update-form">
+        <div id="update-form" className="manager__update-container">
           <label>
             Titlul cartii
             <input
@@ -97,16 +97,19 @@ function UpdateForm(props) {
           </label>
           <label>
             Articol
-            <input
-              type="textarea"
+            <textarea
+              // type="textarea"
               required
               name="update-article"
+              rows="20"
+              cols="100"
+              className="manager__article"
               // defaultValue={blogToUpdate.article}
               onChange={(e) => {
                 blogToUpdate.article = e.target.value;
                 setBlogToUpdate(blogToUpdate);
               }}
-            ></input>
+            ></textarea>
           </label>
         </div>
       )}

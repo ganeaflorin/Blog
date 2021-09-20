@@ -1,6 +1,6 @@
 function CreateForm() {
   return (
-    <div>
+    <div className="manager__create">
       <label>
         Titlul cartii
         <input type="text" required name="title"></input>
@@ -15,7 +15,13 @@ function CreateForm() {
       </label>
       <label>
         Articol
-        <input type="textarea" required name="article"></input>
+        <textarea
+          required
+          name="article"
+          rows="20"
+          cols="100"
+          className="manager__article"
+        ></textarea>
       </label>
     </div>
   );
